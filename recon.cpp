@@ -85,7 +85,8 @@ bool makeRequest(CURL* curl, string url){
 		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &statusCode);
 		result = true;
 
-		cout << url << " ==> " << statusCode << endl;
+		if (statusCode >= 200 && statusCode < 400)
+			cout << url << " ==> " << statusCode << endl;
 
     }
 
